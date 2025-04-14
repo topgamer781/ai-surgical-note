@@ -1,0 +1,121 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 210 50% 98%;
+    --foreground: 210 40% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 20%;
+
+    /* Medical-themed primary (teal) */
+    --primary: 190 95% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Soft blue secondary */
+    --secondary: 210 60% 95%;
+    --secondary-foreground: 210 40% 20%;
+
+    --muted: 210 40% 92%;
+    --muted-foreground: 210 40% 40%;
+
+    --accent: 190 95% 95%;
+    --accent-foreground: 190 95% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 40% 90%;
+    --input: 210 40% 90%;
+    --ring: 190 95% 39%;
+
+    --radius: 0.5rem;
+  }
+ 
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  /* Custom utility classes */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/40 shadow-lg;
+  }
+  
+  .medical-gradient {
+    @apply bg-gradient-to-br from-medical-600 to-medical-800;
+  }
+  
+  .medical-gradient-light {
+    @apply bg-gradient-to-br from-medical-300 to-medical-500;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
+  }
+  
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+}
